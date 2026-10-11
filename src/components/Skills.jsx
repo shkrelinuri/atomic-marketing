@@ -14,7 +14,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow={skills.eyebrow} title={skills.title} />
         {/* Clipped to the content width; edges fade out */}
-        <Reveal className="group mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <Reveal className="group mt-12 overflow-hidden [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
           <ul className="flex w-max animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none">
           {loop.map((s, i) => {
             const Icon = icons[s.icon];
