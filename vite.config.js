@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// base must match the GitHub repo name for project-site hosting
-export default defineConfig({ plugins: [react()], base: "/atomic-marketing/" });
+// GitHub Pages serves from /atomic-marketing/; Vercel (sets VERCEL=1 at build) serves from the root
+export default defineConfig({ plugins: [react()], base: process.env.VERCEL ? "/" : "/atomic-marketing/" });
