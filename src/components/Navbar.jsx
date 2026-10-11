@@ -9,6 +9,17 @@ export default function Navbar({ dark, onToggleTheme }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // On mobile, close the menu first, then scroll; the native jump gets lost while the menu collapses.
+  const goTo = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    setTimeout(() => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelector(href)?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      history.replaceState(null, "", href);
+    }, 50);
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
@@ -106,7 +117,7 @@ export default function Navbar({ dark, onToggleTheme }) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => goTo(e, link.href)}
                     className="block py-3 text-lg font-semibold"
                   >
                     {link.label}
@@ -116,7 +127,7 @@ export default function Navbar({ dark, onToggleTheme }) {
               <li>
                 <a
                   href={navCta.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => goTo(e, navCta.href)}
                   className="mt-2 block rounded-full bg-accent px-5 py-3 text-center font-semibold text-white"
                 >
                   {navCta.label}
