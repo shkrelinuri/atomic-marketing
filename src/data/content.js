@@ -1,4 +1,4 @@
-// Single source of truth for English content. Albanian lives in content.sq.js (same shape).
+﻿// Single source of truth for English content. Albanian lives in content.sq.js (same shape).
 
 // Shared, language-independent info
 export const site = {
@@ -52,57 +52,41 @@ export const services = {
   ],
 };
 
-// Screenshots live in /public/projects. Add a JPG named after each `image` value below.
+// Images live in /public/projects/<folder>/. The first image is the cover; the rest show in the gallery.
 export const portfolio = {
   eyebrow: "Selected work",
   title: "Projects we are proud of.",
-  description: "A selection of websites and apps we have built.",
+  description: "A selection of websites and apps we have built. Click a project to see more screenshots.",
   projects: [
     {
-      title: "Chess Game",
-      description: "Play chess online in the browser with a clean, responsive board.",
-      image: "projects/chess-game.jpg",
-      tags: ["TypeScript", "React"],
+      title: "Endgame Chess",
+      description: "Play chess against the Stockfish engine or online, with adjustable difficulty and a clean, focused board.",
+      images: ["projects/chess-game/1.png", "projects/chess-game/2.png", "projects/chess-game/3.png", "projects/chess-game/4.png"],
+      tags: ["Next.js", "TypeScript", "Stockfish"],
       href: "https://chess-game-nuri20.vercel.app",
     },
     {
-      title: "Online Store",
-      description: "E-commerce site with product listings, cart and checkout flow.",
-      image: "projects/online-store.jpg",
-      tags: ["JavaScript", "React"],
-      href: "https://github.com/shkrelinuri/Online-store",
-    },
-    {
-      title: "MERN Blog",
-      description: "Full-stack blog platform with posts, authentication and an admin area.",
-      image: "projects/mern-blog.jpg",
-      tags: ["MongoDB", "Express", "React", "Node.js"],
-      href: "https://github.com/shkrelinuri/mern-blog",
-    },
-    {
-      title: "Resume Score App",
-      description: "Upload a resume and get an instant score with improvement tips.",
-      image: "projects/resume-score-app.jpg",
-      tags: ["JavaScript", "React"],
-      href: "https://github.com/shkrelinuri/resume-score-app",
-    },
-    {
       title: "Music App",
-      description: "Music player to browse, search and play your favorite tracks.",
-      image: "projects/music-app.jpg",
+      description: "A music player for the latest Albanian songs, with search, playlists, favorites and a full playback bar.",
+      images: ["projects/music-app/1.png", "projects/music-app/2.png"],
       tags: ["JavaScript", "React"],
       href: "https://github.com/shkrelinuri/music-app",
     },
     {
-      title: "Inventory System",
-      description: "Dashboard to track stock, products and inventory levels.",
-      image: "projects/inventory.jpg",
-      tags: ["JavaScript", "Node.js"],
-      href: "https://github.com/shkrelinuri/inventory",
+      title: "Developer Portfolio",
+      description: "A bold, dark portfolio website for an independent developer, with animated hero and project showcase.",
+      images: ["projects/portfolio/1.png", "projects/portfolio/2.png"],
+      tags: ["HTML", "CSS", "JavaScript"],
+      href: "https://nurishkreli.github.io",
+    },
+    {
+      title: "Proxy Provider",
+      description: "Marketing site and dashboard for a datacenter proxy service, with pricing plans and instant checkout.",
+      images: ["projects/proxy-provider/1.png", "projects/proxy-provider/2.png", "projects/proxy-provider/3.png", "projects/proxy-provider/4.png"],
+      tags: ["React", "SaaS", "Dashboard"],
     },
   ],
 };
-
 export const process = {
   eyebrow: "Process",
   title: "Simple, transparent, stress-free.",
@@ -204,6 +188,7 @@ export const ui = {
     another: "Send another message",
   },
   footer: { rights: "All rights reserved.", contact: "Contact" },
+  gallery: { close: "Close gallery", prev: "Previous image", next: "Next image", visit: "Visit live site", view: "View gallery", of: "of" },
 };
 
 export const en = { navLinks, navCta, hero, services, portfolio, process, skills, pricing, faq, contact, ui };
