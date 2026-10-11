@@ -51,18 +51,54 @@ export const services = {
   ],
 };
 
-// Placeholder images come from picsum.photos; replace with real screenshots.
+// Screenshots live in /public/projects. Add a JPG named after each `image` value below.
 export const portfolio = {
   eyebrow: "Selected work",
   title: "Projects we are proud of.",
-  description: "A few recent websites and stores built for real clients.",
+  description: "A selection of websites and apps we have built.",
   projects: [
-    { title: "Bloom Florist", image: "https://picsum.photos/seed/bloom/800/600", tags: ["React", "Stripe", "Tailwind"], href: "#" },
-    { title: "Northwind Law", image: "https://picsum.photos/seed/northwind/800/600", tags: ["Next.js", "CMS"], href: "#" },
-    { title: "Peak Fitness", image: "https://picsum.photos/seed/peak/800/600", tags: ["React", "Node.js"], href: "#" },
-    { title: "Oak & Ember", image: "https://picsum.photos/seed/oakember/800/600", tags: ["Shopify", "Liquid"], href: "#" },
-    { title: "Lumen Studio", image: "https://picsum.photos/seed/lumen/800/600", tags: ["Figma", "React"], href: "#" },
-    { title: "Harbor Cafe", image: "https://picsum.photos/seed/harbor/800/600", tags: ["WordPress", "SEO"], href: "#" },
+    {
+      title: "Chess Game",
+      description: "Play chess online in the browser with a clean, responsive board.",
+      image: "projects/chess-game.jpg",
+      tags: ["TypeScript", "React"],
+      href: "https://chess-game-nuri20.vercel.app",
+    },
+    {
+      title: "Online Store",
+      description: "E-commerce site with product listings, cart and checkout flow.",
+      image: "projects/online-store.jpg",
+      tags: ["JavaScript", "React"],
+      href: "https://github.com/shkrelinuri/Online-store",
+    },
+    {
+      title: "MERN Blog",
+      description: "Full-stack blog platform with posts, authentication and an admin area.",
+      image: "projects/mern-blog.jpg",
+      tags: ["MongoDB", "Express", "React", "Node.js"],
+      href: "https://github.com/shkrelinuri/mern-blog",
+    },
+    {
+      title: "Resume Score App",
+      description: "Upload a resume and get an instant score with improvement tips.",
+      image: "projects/resume-score-app.jpg",
+      tags: ["JavaScript", "React"],
+      href: "https://github.com/shkrelinuri/resume-score-app",
+    },
+    {
+      title: "Music App",
+      description: "Music player to browse, search and play your favorite tracks.",
+      image: "projects/music-app.jpg",
+      tags: ["JavaScript", "React"],
+      href: "https://github.com/shkrelinuri/music-app",
+    },
+    {
+      title: "Inventory System",
+      description: "Dashboard to track stock, products and inventory levels.",
+      image: "projects/inventory.jpg",
+      tags: ["JavaScript", "Node.js"],
+      href: "https://github.com/shkrelinuri/inventory",
+    },
   ],
 };
 
