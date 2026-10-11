@@ -52,13 +52,10 @@ export default function Contact() {
           project_type: values.type,
           message: values.message,
           _subject: `New enquiry from ${values.name} (${values.type})`,
-          _replyto: values.email,
-          _honey: values._honey, // spam trap, must stay empty
-          _template: "table",
+          _gotcha: values._honey, // spam trap, must stay empty
         }),
       });
-      const data = await res.json();
-      if (!res.ok || data.success === "false" || data.success === false) throw new Error("send failed");
+      if (!res.ok) throw new Error("send failed");
       setStatus("sent");
       setValues({ name: "", email: "", type: "", message: "", _honey: "" });
     } catch {

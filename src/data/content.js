@@ -5,8 +5,8 @@ export const site = {
   name: "Atomic Marketing",
   brand: "Atomic Marketing",
   email: "allesdrin5@gmail.com",
-  // Used by the contact form (FormSubmit delivers messages to this address)
-  formEndpoint: "https://formsubmit.co/ajax/allesdrin5@gmail.com",
+  // Used by the contact form (Formspree delivers messages to the account email)
+  formEndpoint: "https://formspree.io/f/mqpelgla",
   socials: [
     { label: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/355676489460" },
     { label: "Instagram", icon: "Instagram", href: "https://instagram.com/nextstreamclips" },
