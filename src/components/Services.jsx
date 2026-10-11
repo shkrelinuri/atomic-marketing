@@ -1,5 +1,5 @@
 import { Gauge, Globe, RefreshCw, Rocket, ShoppingCart, Wrench } from "lucide-react";
-import { services } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -7,6 +7,7 @@ import SectionHeading from "./SectionHeading";
 const icons = { Globe, ShoppingCart, Rocket, RefreshCw, Wrench, Gauge };
 
 export default function Services() {
+  const { services } = useContent();
   return (
     <section id="services" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={services.eyebrow} title={services.title} description={services.description} />

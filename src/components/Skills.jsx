@@ -1,5 +1,5 @@
 import { Atom, Code2, Database, Figma, Gauge, Globe, Search, Server, ShoppingBag, Wind } from "lucide-react";
-import { skills } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -7,6 +7,7 @@ const icons = { Atom, Code2, Wind, Server, Database, Figma, ShoppingBag, Globe, 
 
 // Infinite marquee: the list is rendered twice and translated by -50%.
 export default function Skills() {
+  const { skills } = useContent();
   const loop = [...skills.items, ...skills.items];
   return (
     <section aria-label="Skills" className="overflow-hidden py-16 sm:py-24">

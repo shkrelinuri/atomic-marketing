@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { hero } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Button from "./Button";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -25,6 +25,7 @@ const item = {
 };
 
 export default function Hero() {
+  const { hero } = useContent();
   const reduce = useReducedMotion();
 
   return (

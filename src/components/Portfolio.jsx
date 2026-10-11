@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight, ImageOff } from "lucide-react";
-import { portfolio } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -50,6 +50,7 @@ function ProjectCard({ project: p }) {
 }
 
 export default function Portfolio() {
+  const { portfolio } = useContent();
   return (
     <section id="portfolio" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={portfolio.eyebrow} title={portfolio.title} description={portfolio.description} />

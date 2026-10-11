@@ -1,14 +1,15 @@
-// Single source of truth for all site content. Edit text here.
+// Single source of truth for English content. Albanian lives in content.sq.js (same shape).
 
+// Shared, language-independent info
 export const site = {
   name: "Atomic Marketing",
   brand: "Atomic Marketing",
-  email: "hello@atomicmarketing.com",
+  email: "allesdrin5@gmail.com",
+  // Used by the contact form (FormSubmit delivers messages to this address)
+  formEndpoint: "https://formsubmit.co/ajax/allesdrin5@gmail.com",
   socials: [
-    { label: "GitHub", icon: "Github", href: "https://github.com/" },
-    { label: "LinkedIn", icon: "Linkedin", href: "https://linkedin.com/" },
-    { label: "Instagram", icon: "Instagram", href: "https://instagram.com/" },
-    { label: "Twitter", icon: "Twitter", href: "https://twitter.com/" },
+    { label: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/355676489460" },
+    { label: "Instagram", icon: "Instagram", href: "https://instagram.com/nextstreamclips" },
   ],
 };
 
@@ -178,3 +179,31 @@ export const contact = {
   description: "Tell us about your project and we will reply within one business day.",
   projectTypes: ["Business website", "Online store", "Landing page", "Redesign", "Maintenance", "Other"],
 };
+
+// Small UI strings used inside components
+export const ui = {
+  switchLang: "Shqip",
+  switchLangShort: "SQ",
+  nav: { openMenu: "Open menu", closeMenu: "Close menu", lightMode: "Switch to light mode", darkMode: "Switch to dark mode" },
+  pricing: { popular: "Most popular", cta: "Get started" },
+  form: {
+    name: "Name",
+    email: "Email",
+    type: "Project type",
+    message: "Message",
+    select: "Select...",
+    send: "Send message",
+    sending: "Sending...",
+    errName: "Please enter your name.",
+    errEmail: "Please enter a valid email address.",
+    errType: "Please choose a project type.",
+    errMessage: "Please tell us a bit more (at least 10 characters).",
+    errSend: "Something went wrong. Please try again or contact us on WhatsApp.",
+    thanksTitle: "Thank you!",
+    thanksText: "Your message has been sent. We will reply soon.",
+    another: "Send another message",
+  },
+  footer: { rights: "All rights reserved.", contact: "Contact" },
+};
+
+export const en = { navLinks, navCta, hero, services, portfolio, process, skills, pricing, faq, contact, ui };

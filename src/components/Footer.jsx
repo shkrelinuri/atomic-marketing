@@ -1,7 +1,8 @@
 import { Atom } from "lucide-react";
-import { navLinks, site } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 
 export default function Footer() {
+  const { navLinks, site, ui } = useContent();
   return (
     <footer className="border-t border-ink/10 dark:border-paper/10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">
@@ -17,12 +18,12 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <a href="#contact" className="hover:text-accent">Contact</a>
+              <a href="#contact" className="hover:text-accent">{ui.footer.contact}</a>
             </li>
           </ul>
         </nav>
         <p className="text-sm text-ink/60 dark:text-paper/60">
-          &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+          &copy; {new Date().getFullYear()} {site.name}. {ui.footer.rights}
         </p>
       </div>
     </footer>

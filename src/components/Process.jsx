@@ -1,9 +1,10 @@
-import { process } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 // Vertical timeline on mobile, 4 columns on desktop.
 export default function Process() {
+  const { process } = useContent();
   return (
     <section id="process" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={process.eyebrow} title={process.title} />

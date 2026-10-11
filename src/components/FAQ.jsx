@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
-import { faq } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 // One item open at a time.
 export default function FAQ() {
+  const { faq } = useContent();
   const [open, setOpen] = useState(0);
 
   return (

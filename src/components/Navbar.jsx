@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Atom, Menu, Moon, Sun, X } from "lucide-react";
-import { navCta, navLinks, site } from "../data/content";
+import { Atom, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { useContent } from "../i18n/LanguageContext";
 
 // Sticky navbar: smooth-scroll links, animated underline, theme toggle, mobile menu.
 export default function Navbar({ dark, onToggleTheme }) {
+  const { navCta, navLinks, site, ui, toggleLang } = useContent();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -53,8 +54,18 @@ export default function Navbar({ dark, onToggleTheme }) {
         <div className="flex items-center gap-2">
           <button
             type="button"
+            onClick={toggleLang}
+            aria-label={ui.switchLang}
+            className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-accent/10 hover:text-accent"
+          >
+            <Languages size={16} aria-hidden="true" />
+            {ui.switchLangShort}
+          </button>
+
+          <button
+            type="button"
             onClick={onToggleTheme}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={dark ? ui.nav.lightMode : ui.nav.darkMode}
             className="rounded-full p-2 transition-colors hover:bg-accent/10 hover:text-accent"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -72,7 +83,7 @@ export default function Navbar({ dark, onToggleTheme }) {
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? ui.nav.closeMenu : ui.nav.openMenu}
             className="rounded-full p-2 md:hidden"
           >
             {open ? <X size={20} /> : <Menu size={20} />}

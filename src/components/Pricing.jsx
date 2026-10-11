@@ -1,10 +1,11 @@
 import { Check } from "lucide-react";
-import { pricing } from "../data/content";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import Button from "./Button";
 
 export default function Pricing() {
+  const { pricing, ui } = useContent();
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={pricing.eyebrow} title={pricing.title} description={pricing.description} />
@@ -21,7 +22,7 @@ export default function Pricing() {
             >
               {plan.highlighted && (
                 <span className="absolute -top-3 left-8 rounded-full bg-ink px-3 py-1 text-xs font-bold text-white dark:bg-paper dark:text-ink">
-                  Most popular
+                  {ui.pricing.popular}
                 </span>
               )}
               <h3 className="text-xl font-bold">{plan.name}</h3>
@@ -42,11 +43,11 @@ export default function Pricing() {
                   href="#contact"
                   className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-accent transition-transform hover:scale-[1.03]"
                 >
-                  Get started
+                  {ui.pricing.cta}
                 </a>
               ) : (
                 <Button href="#contact" variant="outline">
-                  Get started
+                  {ui.pricing.cta}
                 </Button>
               )}
             </article>

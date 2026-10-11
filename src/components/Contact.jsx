@@ -1,28 +1,31 @@
 import { useState } from "react";
-import { CheckCircle2, Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
-import { contact, site } from "../data/content";
+import { CheckCircle2, Instagram, Mail, MessageCircle } from "lucide-react";
+import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
-const socialIcons = { Github, Linkedin, Instagram, Twitter };
+const socialIcons = { MessageCircle, Instagram };
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-function validate(v) {
-  const e = {};
-  if (v.name.trim().length < 2) e.name = "Please enter your name.";
-  if (!emailRe.test(v.email.trim())) e.email = "Please enter a valid email address.";
-  if (!v.type) e.type = "Please choose a project type.";
-  if (v.message.trim().length < 10) e.message = "Please tell us a bit more (at least 10 characters).";
-  return e;
-}
 
 const field =
   "mt-2 w-full rounded-xl border bg-white px-4 py-3 outline-none transition-colors focus:border-accent dark:bg-paper/5";
 
 export default function Contact() {
-  const [values, setValues] = useState({ name: "", email: "", type: "", message: "" });
+  const { contact, site, ui } = useContent();
+  const f = ui.form;
+
+  const [values, setValues] = useState({ name: "", email: "", type: "", message: "", _honey: "" });
   const [errors, setErrors] = useState({});
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+
+  const validate = (v) => {
+    const e = {};
+    if (v.name.trim().length < 2) e.name = f.errName;
+    if (!emailRe.test(v.email.trim())) e.email = f.errEmail;
+    if (!v.type) e.type = f.errType;
+    if (v.message.trim().length < 10) e.message = f.errMessage;
+    return e;
+  };
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -30,21 +33,37 @@ export default function Contact() {
     if (errors[name]) setErrors((er) => ({ ...er, [name]: undefined }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const errs = validate(values);
     setErrors(errs);
     if (Object.keys(errs).length) {
-      // Focus the first invalid field
       document.getElementById(`field-${Object.keys(errs)[0]}`)?.focus();
       return;
     }
-    // No backend yet: open the visitor's email client with the message prefilled.
-    const body = `${values.message}\n\nFrom: ${values.name} (${values.email})`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `${values.type} enquiry`
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch(site.formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          project_type: values.type,
+          message: values.message,
+          _subject: `New enquiry from ${values.name} (${values.type})`,
+          _replyto: values.email,
+          _honey: values._honey, // spam trap, must stay empty
+          _template: "table",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.success === "false" || data.success === false) throw new Error("send failed");
+      setStatus("sent");
+      setValues({ name: "", email: "", type: "", message: "", _honey: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const border = (k) => (errors[k] ? "border-red-500" : "border-ink/15 dark:border-paper/20");
@@ -87,37 +106,39 @@ export default function Contact() {
         </div>
 
         <Reveal>
-          {sent ? (
+          {status === "sent" ? (
             <div role="status" className="flex h-full flex-col items-center justify-center rounded-2xl border border-accent/30 bg-accent/5 p-10 text-center">
               <CheckCircle2 size={48} className="text-accent" aria-hidden="true" />
-              <h3 className="mt-4 text-2xl font-bold">Thank you!</h3>
-              <p className="mt-2 text-ink/70 dark:text-paper/70">Your email app should open with your message. We will reply soon.</p>
-              <button type="button" onClick={() => setSent(false)} className="mt-6 font-semibold text-accent hover:underline">
-                Send another message
+              <h3 className="mt-4 text-2xl font-bold">{f.thanksTitle}</h3>
+              <p className="mt-2 text-ink/70 dark:text-paper/70">{f.thanksText}</p>
+              <button type="button" onClick={() => setStatus("idle")} className="mt-6 font-semibold text-accent hover:underline">
+                {f.another}
               </button>
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="space-y-5">
+              {/* Honeypot: hidden from people, filled by bots */}
+              <input type="text" name="_honey" value={values._honey} onChange={onChange} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               <div>
-                <label htmlFor="field-name" className="font-semibold">Name</label>
+                <label htmlFor="field-name" className="font-semibold">{f.name}</label>
                 <input id="field-name" name="name" autoComplete="name" value={values.name} onChange={onChange}
                   aria-invalid={!!errors.name} aria-describedby={errors.name ? "error-name" : undefined}
                   className={`${field} ${border("name")}`} />
                 {err("name")}
               </div>
               <div>
-                <label htmlFor="field-email" className="font-semibold">Email</label>
+                <label htmlFor="field-email" className="font-semibold">{f.email}</label>
                 <input id="field-email" name="email" type="email" autoComplete="email" value={values.email} onChange={onChange}
                   aria-invalid={!!errors.email} aria-describedby={errors.email ? "error-email" : undefined}
                   className={`${field} ${border("email")}`} />
                 {err("email")}
               </div>
               <div>
-                <label htmlFor="field-type" className="font-semibold">Project type</label>
+                <label htmlFor="field-type" className="font-semibold">{f.type}</label>
                 <select id="field-type" name="type" value={values.type} onChange={onChange}
                   aria-invalid={!!errors.type} aria-describedby={errors.type ? "error-type" : undefined}
                   className={`${field} ${border("type")}`}>
-                  <option value="">Select...</option>
+                  <option value="">{f.select}</option>
                   {contact.projectTypes.map((t) => (
                     <option key={t} value={t}>{t}</option>
                   ))}
@@ -125,18 +146,24 @@ export default function Contact() {
                 {err("type")}
               </div>
               <div>
-                <label htmlFor="field-message" className="font-semibold">Message</label>
+                <label htmlFor="field-message" className="font-semibold">{f.message}</label>
                 <textarea id="field-message" name="message" rows={5} value={values.message} onChange={onChange}
                   aria-invalid={!!errors.message} aria-describedby={errors.message ? "error-message" : undefined}
                   className={`${field} ${border("message")}`} />
                 {err("message")}
               </div>
+              {status === "error" && (
+                <p role="alert" className="text-sm text-red-500">{f.errSend}</p>
+              )}
               <button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-full bg-accent px-6 py-3 font-semibold text-white"
+                disabled={status === "sending"}
+                className="group relative w-full overflow-hidden rounded-full bg-accent px-6 py-3 font-semibold text-white disabled:opacity-70"
               >
                 <span aria-hidden="true" className="absolute inset-0 -translate-x-full bg-ink transition-transform duration-300 group-hover:translate-x-0 motion-reduce:transition-none dark:bg-paper" />
-                <span className="relative transition-colors duration-300 dark:group-hover:text-ink">Send message</span>
+                <span className="relative transition-colors duration-300 dark:group-hover:text-ink">
+                  {status === "sending" ? f.sending : f.send}
+                </span>
               </button>
             </form>
           )}
