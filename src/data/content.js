@@ -77,7 +77,7 @@ export const portfolio = {
       description: "A bold, dark portfolio website for an independent developer, with animated hero and project showcase.",
       images: ["projects/portfolio/1.png", "projects/portfolio/2.png"],
       tags: ["HTML", "CSS", "JavaScript"],
-      href: "https://nurishkreli.github.io",
+      href: "https://shkrelinuri.github.io/portfolio/",
     },
     {
       title: "Proxy Provider",
