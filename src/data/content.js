@@ -130,14 +130,14 @@ export const pricing = {
     },
     {
       name: "Business",
-      price: "$1,990",
+      price: "$1,290",
       description: "A complete website for a growing business.",
       features: ["Up to 6 pages", "Custom design", "CMS integration", "Advanced SEO", "Analytics setup", "30 days support"],
       highlighted: true,
     },
     {
       name: "Store",
-      price: "$3,900",
+      price: "$2,490",
       description: "A full online store ready to sell.",
       features: ["Unlimited products", "Payments and shipping", "Custom design", "Performance tuning", "Training session", "90 days support"],
       highlighted: false,
