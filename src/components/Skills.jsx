@@ -10,19 +10,19 @@ export default function Skills() {
   const { skills } = useContent();
   const loop = [...skills.items, ...skills.items];
   return (
-    <section aria-label="Skills" className="overflow-hidden py-16 sm:py-24">
+    <section aria-label="Skills" className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow={skills.eyebrow} title={skills.title} />
-      </div>
-      <Reveal className="group mt-12">
-        <ul className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+        {/* Clipped to the content width; edges fade out */}
+        <Reveal className="group mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+          <ul className="flex w-max animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none">
           {loop.map((s, i) => {
             const Icon = icons[s.icon];
             return (
               <li
                 key={i}
                 aria-hidden={i >= skills.items.length}
-                className="flex items-center gap-3 rounded-full border border-ink/10 px-6 py-3 font-semibold dark:border-paper/15"
+                className="mr-4 flex items-center gap-3 rounded-full border border-ink/10 px-6 py-3 font-semibold dark:border-paper/15"
               >
                 <Icon size={20} className="text-accent" aria-hidden="true" />
                 {s.name}
@@ -30,7 +30,8 @@ export default function Skills() {
             );
           })}
         </ul>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }
