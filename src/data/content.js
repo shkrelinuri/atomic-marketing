@@ -123,7 +123,7 @@ export const pricing = {
   plans: [
     {
       name: "Starter",
-      price: "$790",
+      price: "$490",
       description: "A polished landing page to get you online.",
       features: ["1 page", "Responsive design", "Contact form", "Basic SEO", "1 week delivery"],
       highlighted: false,
