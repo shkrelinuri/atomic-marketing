@@ -59,6 +59,12 @@ export const portfolio = {
   description: "A selection of websites and apps we have built. Click a project to see more screenshots.",
   projects: [
     {
+      title: "North / Form Store",
+      description: "A modern fashion online store with a bold editorial homepage, product catalogue, shopping bag and contact page.",
+      images: ["projects/online-store/1.png", "projects/online-store/2.png", "projects/online-store/3.png", "projects/online-store/4.png", "projects/online-store/5.png"],
+      tags: ["E-commerce", "React", "Responsive"],
+    },
+    {
       title: "Endgame Chess",
       description: "Play chess against the Stockfish engine or online, with adjustable difficulty and a clean, focused board.",
       images: ["projects/chess-game/1.png", "projects/chess-game/2.png", "projects/chess-game/3.png", "projects/chess-game/4.png"],

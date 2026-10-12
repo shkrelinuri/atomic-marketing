@@ -49,6 +49,7 @@ export const sq = {
     projects: en.portfolio.projects.map((p, i) => ({
       ...p,
       description: [
+        "Dyqan online mode me faqe kryesore editoriale, katalog produktesh, shportë blerjesh dhe faqe kontakti.",
         "Luaj shah kundër motorit Stockfish ose online, me vështirësi të rregullueshme dhe një tabelë të pastër.",
         "Luajtës muzike për këngët më të reja shqiptare, me kërkim, playlista, të preferuara dhe shirit luajtjeje.",
         "Faqe dhe panel për një shërbim proxy datacenter, me plane çmimesh dhe pagesë të menjëhershme.",
