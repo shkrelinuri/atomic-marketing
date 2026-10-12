@@ -17,7 +17,7 @@ export default function Services() {
     <section id="services" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={services.eyebrow} title={services.title} description={services.description} />
 
-      <ul className="mt-14 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {services.items.map((item, i) => {
           const Icon = icons[item.icon];
           const isOpen = open === i;
@@ -25,7 +25,7 @@ export default function Services() {
             <Reveal as="li" key={item.title} delay={(i % 4) * 0.1}>
               {/* Card lifts with a soft shadow on hover; click opens the longer description */}
               <article
-                className={`group rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-ink/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:bg-paper/[0.03] dark:hover:shadow-black/40 ${
+                className={`group flex h-full flex-col rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-ink/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:bg-paper/[0.03] dark:hover:shadow-black/40 ${
                   isOpen ? "border-accent" : "border-ink/10 dark:border-paper/10"
                 }`}
               >
@@ -34,7 +34,7 @@ export default function Services() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
                   aria-controls={`service-panel-${i}`}
-                  className="block w-full rounded-2xl p-8 text-left"
+                  className="block w-full flex-1 rounded-2xl p-8 text-left"
                 >
                   <div className="mb-6 flex items-center justify-between">
                     <div
