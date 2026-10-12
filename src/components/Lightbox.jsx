@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const src = (path) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -75,16 +75,6 @@ export default function Lightbox({ project, labels, onClose }) {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          {project.href && (
-            <a
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold transition-transform hover:-translate-y-0.5"
-            >
-              {labels.visit} <ExternalLink size={14} aria-hidden="true" />
-            </a>
-          )}
           <button
             ref={closeRef}
             type="button"

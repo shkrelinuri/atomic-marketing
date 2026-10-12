@@ -68,9 +68,9 @@ export default function Portfolio() {
     <section id="portfolio" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={portfolio.eyebrow} title={portfolio.title} description={portfolio.description} />
 
-      <ul className="mt-14 grid gap-6 sm:grid-cols-2">
+      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {portfolio.projects.map((p, i) => (
-          <Reveal as="li" key={p.title} delay={(i % 2) * 0.1}>
+          <Reveal as="li" key={p.title} delay={(i % 3) * 0.1}>
             <ProjectCard project={p} label={ui.gallery.view} onOpen={() => setActive(i)} />
           </Reveal>
         ))}

@@ -43,16 +43,17 @@ export const sq = {
 
   portfolio: {
     ...en.portfolio,
-    eyebrow: "Punime të zgjedhura",
-    title: "Projekte për të cilat jemi krenarë.",
+    eyebrow: "Punimet tona",
+    title: "Disa nga projektet tona.",
     description: "Një përzgjedhje faqesh dhe aplikacionesh që kemi ndërtuar. Klikoni një projekt për më shumë foto.",
     projects: en.portfolio.projects.map((p, i) => ({
       ...p,
       description: [
         "Luaj shah kundër motorit Stockfish ose online, me vështirësi të rregullueshme dhe një tabelë të pastër.",
         "Luajtës muzike për këngët më të reja shqiptare, me kërkim, playlista, të preferuara dhe shirit luajtjeje.",
-        "Faqe portofoli e errët dhe e guximshme për një zhvillues të pavarur, me animacione dhe prezantim projektesh.",
         "Faqe dhe panel për një shërbim proxy datacenter, me plane çmimesh dhe pagesë të menjëhershme.",
+        "Mjet analize portretesh që shqyrton foto frontale e profili dhe jep vërejtje të qarta e të matura.",
+        "Analizues CV-je që vlerëson përputhshmërinë ATS, ndikimin, qartësinë dhe fjalët kyçe, me këshilla për përmirësim.",
       ][i],
     })),
   },
@@ -138,7 +139,7 @@ export const sq = {
       another: "Dërgo një mesazh tjetër",
     },
     footer: { rights: "Të gjitha të drejtat e rezervuara.", contact: "Kontakti" },
-    gallery: { close: "Mbyll galerinë", prev: "Fotoja e mëparshme", next: "Fotoja tjetër", visit: "Vizito faqen", view: "Shiko galerinë", of: "nga" },
+    gallery: { close: "Mbyll galerinë", prev: "Fotoja e mëparshme", next: "Fotoja tjetër", view: "Shiko galerinë", of: "nga" },
   },
 };
 

@@ -54,8 +54,8 @@ export const services = {
 
 // Images live in /public/projects/<folder>/. The first image is the cover; the rest show in the gallery.
 export const portfolio = {
-  eyebrow: "Selected work",
-  title: "Projects we are proud of.",
+  eyebrow: "Our work",
+  title: "Some of our projects.",
   description: "A selection of websites and apps we have built. Click a project to see more screenshots.",
   projects: [
     {
@@ -63,27 +63,30 @@ export const portfolio = {
       description: "Play chess against the Stockfish engine or online, with adjustable difficulty and a clean, focused board.",
       images: ["projects/chess-game/1.png", "projects/chess-game/2.png", "projects/chess-game/3.png", "projects/chess-game/4.png"],
       tags: ["Next.js", "TypeScript", "Stockfish"],
-      href: "https://chess-game-nuri20.vercel.app",
     },
     {
       title: "Music App",
       description: "A music player for the latest Albanian songs, with search, playlists, favorites and a full playback bar.",
       images: ["projects/music-app/1.png", "projects/music-app/2.png"],
       tags: ["JavaScript", "React"],
-      href: "https://github.com/shkrelinuri/music-app",
-    },
-    {
-      title: "Developer Portfolio",
-      description: "A bold, dark portfolio website for an independent developer, with animated hero and project showcase.",
-      images: ["projects/portfolio/1.png", "projects/portfolio/2.png"],
-      tags: ["HTML", "CSS", "JavaScript"],
-      href: "https://shkrelinuri.github.io/portfolio/",
     },
     {
       title: "Proxy Provider",
       description: "Marketing site and dashboard for a datacenter proxy service, with pricing plans and instant checkout.",
       images: ["projects/proxy-provider/1.png", "projects/proxy-provider/2.png", "projects/proxy-provider/3.png", "projects/proxy-provider/4.png"],
       tags: ["React", "SaaS", "Dashboard"],
+    },
+    {
+      title: "FaceScore",
+      description: "A portrait analysis tool that reviews frontal and profile photos and returns clear, considered observations.",
+      images: ["projects/facescore/1.png", "projects/facescore/2.png", "projects/facescore/3.png", "projects/facescore/4.png"],
+      tags: ["React", "AI", "Dark mode"],
+    },
+    {
+      title: "Hireability",
+      description: "A resume analyser that scores ATS compatibility, impact, clarity and keyword match, with tips to improve.",
+      images: ["projects/hireability/1.png", "projects/hireability/2.png", "projects/hireability/3.png"],
+      tags: ["React", "AI", "Analytics"],
     },
   ],
 };
@@ -188,7 +191,7 @@ export const ui = {
     another: "Send another message",
   },
   footer: { rights: "All rights reserved.", contact: "Contact" },
-  gallery: { close: "Close gallery", prev: "Previous image", next: "Next image", visit: "Visit live site", view: "View gallery", of: "of" },
+  gallery: { close: "Close gallery", prev: "Previous image", next: "Next image", view: "View gallery", of: "of" },
 };
 
 export const en = { navLinks, navCta, hero, services, portfolio, process, skills, pricing, faq, contact, ui };
