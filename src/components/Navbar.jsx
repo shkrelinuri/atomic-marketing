@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Atom, Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
@@ -43,7 +43,7 @@ export default function Navbar({ dark, onToggleTheme }) {
           : "border-b border-transparent"
       }`}
     >
-      <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <nav aria-label="Main" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a href="#top" className="flex items-center gap-2 text-lg font-extrabold tracking-tight">
           <Atom size={22} className="text-accent" aria-hidden="true" />
           {site.brand}

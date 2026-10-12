@@ -7,6 +7,17 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* offset for sticky navbar */
   }
+  /* Scale everything (rem-based) up on very large screens */
+  @media (min-width: 1920px) {
+    html {
+      font-size: 112.5%;
+    }
+  }
+  @media (min-width: 2560px) {
+    html {
+      font-size: 125%;
+    }
+  }
   body {
     @apply bg-paper font-sans text-ink antialiased transition-colors duration-300;
   }

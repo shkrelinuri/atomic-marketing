@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+﻿import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
 import Button from "./Button";
@@ -50,7 +50,7 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative mx-auto w-full max-w-6xl px-6 py-20"
+        className="relative mx-auto w-full max-w-7xl px-6 py-20"
       >
         <motion.p
           variants={item}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Images } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
@@ -65,7 +65,7 @@ export default function Portfolio() {
   const project = active === null ? null : portfolio.projects[active];
 
   return (
-    <section id="portfolio" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <section id="portfolio" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={portfolio.eyebrow} title={portfolio.title} description={portfolio.description} />
 
       <ul className="mt-14 grid gap-6 sm:grid-cols-2">

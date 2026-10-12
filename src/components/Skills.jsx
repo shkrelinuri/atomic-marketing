@@ -1,4 +1,4 @@
-import { Atom, Code2, Database, Figma, Gauge, Globe, Search, Server, ShoppingBag, Wind } from "lucide-react";
+﻿import { Atom, Code2, Database, Figma, Gauge, Globe, Search, Server, ShoppingBag, Wind } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -11,7 +11,7 @@ export default function Skills() {
   const loop = [...skills.items, ...skills.items];
   return (
     <section aria-label="Skills" className="py-16 sm:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <SectionHeading eyebrow={skills.eyebrow} title={skills.title} />
         {/* Clipped to the content width; edges fade out */}
         <Reveal className="group mt-12 overflow-hidden [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">

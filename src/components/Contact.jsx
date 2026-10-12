@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { CheckCircle2, Instagram, Mail, MessageCircle } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
@@ -72,7 +72,7 @@ export default function Contact() {
     );
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <section id="contact" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <div className="grid gap-14 lg:grid-cols-2">
         <div>
           <SectionHeading eyebrow={contact.eyebrow} title={contact.title} description={contact.description} />

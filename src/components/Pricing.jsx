@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+﻿import { Check } from "lucide-react";
 import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -7,7 +7,7 @@ import Button from "./Button";
 export default function Pricing() {
   const { pricing, ui } = useContent();
   return (
-    <section id="pricing" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <section id="pricing" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={pricing.eyebrow} title={pricing.title} description={pricing.description} />
 
       <ul className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">

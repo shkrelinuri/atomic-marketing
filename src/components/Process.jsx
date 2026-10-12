@@ -1,4 +1,4 @@
-import { useContent } from "../i18n/LanguageContext";
+﻿import { useContent } from "../i18n/LanguageContext";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 export default function Process() {
   const { process } = useContent();
   return (
-    <section id="process" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <section id="process" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
       <SectionHeading eyebrow={process.eyebrow} title={process.title} />
 
       <ol className="relative mt-14 grid gap-10 lg:grid-cols-4 lg:gap-6">
