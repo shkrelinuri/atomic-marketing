@@ -71,6 +71,12 @@ export const portfolio = {
       tags: ["Next.js", "TypeScript", "Stockfish"],
     },
     {
+      title: "Chess Talent Estimator",
+      description: "A quick tactical quiz of ten puzzles that estimates a player's rating band and breaks down their pattern-spotting strengths.",
+      images: ["projects/chess-estimator/1.png", "projects/chess-estimator/2.png", "projects/chess-estimator/3.png"],
+      tags: ["React", "Quiz", "Payments"],
+    },
+    {
       title: "Music App",
       description: "A music player for the latest Albanian songs, with search, playlists, favorites and a full playback bar.",
       images: ["projects/music-app/1.png", "projects/music-app/2.png"],

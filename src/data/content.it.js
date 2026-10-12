@@ -1,4 +1,4 @@
-// Italian content. Same shape as content.js; non-text fields are reused from English.
+﻿// Italian content. Same shape as content.js; non-text fields are reused from English.
 import { en } from "./content";
 
 export const it = {
@@ -51,6 +51,7 @@ export const it = {
       description: [
         "Negozio online di moda con homepage editoriale, catalogo prodotti, carrello e pagina contatti.",
         "Gioca a scacchi contro il motore Stockfish o online, con difficoltà regolabile e una scacchiera pulita.",
+        "Un quiz tattico di dieci problemi che stima la fascia di rating del giocatore e ne analizza i punti di forza.",
         "Un lettore musicale per le ultime canzoni albanesi, con ricerca, playlist, preferiti e barra di riproduzione.",
         "Sito e pannello per un servizio di proxy datacenter, con piani tariffari e pagamento immediato.",
         "Strumento di analisi dei ritratti che esamina foto frontali e di profilo e offre osservazioni chiare e misurate.",

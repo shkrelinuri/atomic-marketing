@@ -51,6 +51,7 @@ export const sq = {
       description: [
         "Dyqan online mode me faqe kryesore editoriale, katalog produktesh, shportë blerjesh dhe faqe kontakti.",
         "Luaj shah kundër motorit Stockfish ose online, me vështirësi të rregullueshme dhe një tabelë të pastër.",
+        "Kuiz taktik me dhjetë enigma që vlerëson nivelin e lojtarit dhe shfaq pikat e forta në njohjen e modeleve.",
         "Luajtës muzike për këngët më të reja shqiptare, me kërkim, playlista, të preferuara dhe shirit luajtjeje.",
         "Faqe dhe panel për një shërbim proxy datacenter, me plane çmimesh dhe pagesë të menjëhershme.",
         "Mjet analize portretesh që shqyrton foto frontale e profili dhe jep vërejtje të qarta e të matura.",
