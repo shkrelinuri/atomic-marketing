@@ -41,17 +41,18 @@ export const hero = {
 export const services = {
   eyebrow: "Services",
   title: "Everything you need to get online.",
-  description: "From a first landing page to a full online store, we handle design, development and launch.",
+  description: "From a first landing page to a full online store, we handle design, development and launch. Click a service to learn more.",
   items: [
-    { icon: "Globe", title: "Business websites", description: "Professional, fast sites that explain what you do and turn visitors into customers." },
-    { icon: "ShoppingCart", title: "Online stores", description: "Secure e-commerce with easy product management, payments and shipping set up." },
-    { icon: "Rocket", title: "Landing pages", description: "Focused single pages built to convert for campaigns, launches and events." },
-    { icon: "RefreshCw", title: "Redesigns", description: "Give an outdated site a modern look, better usability and faster load times." },
-    { icon: "Wrench", title: "Maintenance", description: "Updates, backups, security and small changes so your site stays healthy." },
-    { icon: "Gauge", title: "Speed and SEO", description: "Performance tuning and search-friendly structure so people can find you." },
+    { icon: "Globe", title: "Business websites", description: "Professional, fast sites that explain what you do and turn visitors into customers.", details: "We plan the structure, write clear page copy with you and build a fast, mobile-friendly site that reflects your brand. It includes a contact form, social links, basic SEO and a simple way to update content yourself." },
+    { icon: "ShoppingCart", title: "Online stores", description: "Secure e-commerce with easy product management, payments and shipping set up.", details: "From product pages and a smooth cart to secure online payments and shipping rules, we set up everything you need to sell. We also show you how to add products, manage orders and follow your sales." },
+    { icon: "Rocket", title: "Landing pages", description: "Focused single pages built to convert for campaigns, launches and events.", details: "A single focused page with a clear message and a strong call to action. Ideal for promotions, events, app launches or new services, built to load instantly and turn visitors into leads." },
+    { icon: "RefreshCw", title: "Redesigns", description: "Give an outdated site a modern look, better usability and faster load times.", details: "We review your current site, keep what works and rebuild the rest: a fresh design, clearer navigation, faster loading and better search visibility, without losing your existing content." },
+    { icon: "Wrench", title: "Maintenance", description: "Updates, backups, security and small changes so your site stays healthy.", details: "Ongoing care for your site: software updates, regular backups, security checks and small content changes. If something breaks, we fix it quickly so you can focus on your business." },
+    { icon: "Gauge", title: "Speed and SEO", description: "Performance tuning and search-friendly structure so people can find you.", details: "We check your speed and search visibility, compress images, clean up code, fix technical SEO issues and set up analytics so you can see what brings customers in." },
+    { icon: "PenTool", title: "Logo design", description: "A memorable logo that gives your business a clear, professional identity.", details: "You receive several logo concepts based on your business and style, with revisions until you are happy. We deliver final files for web and print, in colour and in black and white." },
+    { icon: "Palette", title: "Graphic design", description: "Business cards, social media posts, flyers and everything your brand needs.", details: "Business cards, flyers, social media posts, banners and brand guidelines. We keep colours, fonts and style consistent so your business looks professional everywhere." },
   ],
 };
-
 // Images live in /public/projects/<folder>/. The first image is the cover; the rest show in the gallery.
 export const portfolio = {
   eyebrow: "Our work",

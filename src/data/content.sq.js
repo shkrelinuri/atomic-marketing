@@ -30,14 +30,16 @@ export const sq = {
   services: {
     eyebrow: "Shërbimet",
     title: "Gjithçka që ju duhet për të dalë online.",
-    description: "Nga një faqe e thjeshtë deri te një dyqan i plotë online, ne kujdesemi për dizajnin, zhvillimin dhe lançimin.",
+    description: "Nga një faqe e thjeshtë deri te një dyqan i plotë online, ne kujdesemi për dizajnin, zhvillimin dhe lançimin. Klikoni një shërbim për të mësuar më shumë.",
     items: [
-      { icon: "Globe", title: "Faqe për biznese", description: "Faqe profesionale e të shpejta që shpjegojnë çfarë bëni dhe i kthejnë vizitorët në klientë." },
-      { icon: "ShoppingCart", title: "Dyqane online", description: "E-commerce i sigurt me menaxhim të lehtë të produkteve, pagesave dhe dërgesave." },
-      { icon: "Rocket", title: "Faqe uebi (landing)", description: "Faqe të fokusuara për konvertim, për fushata, lançime dhe evente." },
-      { icon: "RefreshCw", title: "Ridizajnim", description: "Jepini faqes suaj të vjetër një pamje moderne, përdorim më të mirë dhe shpejtësi më të lartë." },
-      { icon: "Wrench", title: "Mirëmbajtje", description: "Përditësime, kopje rezervë, siguri dhe ndryshime të vogla që faqja juaj të qëndrojë në formë." },
-      { icon: "Gauge", title: "Shpejtësi dhe SEO", description: "Optimizim i performancës dhe strukturë miqësore për kërkim që t'ju gjejnë më lehtë." },
+      { icon: "Globe", title: "Faqe për biznese", description: "Faqe profesionale e të shpejta që shpjegojnë çfarë bëni dhe i kthejnë vizitorët në klientë.", details: "Planifikojmë strukturën, shkruajmë së bashku tekstet e faqeve dhe ndërtojmë një faqe të shpejtë, të përshtatur për celular, që pasqyron markën tuaj. Përfshin formular kontakti, lidhje sociale, SEO bazë dhe një mënyrë të thjeshtë për ta përditësuar vetë përmbajtjen." },
+      { icon: "ShoppingCart", title: "Dyqane online", description: "E-commerce i sigurt me menaxhim të lehtë të produkteve, pagesave dhe dërgesave.", details: "Nga faqet e produkteve dhe shporta e thjeshtë, te pagesat e sigurta online dhe rregullat e dërgesës, konfigurojmë gjithçka që ju duhet për të shitur. Ju tregojmë gjithashtu si të shtoni produkte, të menaxhoni porositë dhe të ndiqni shitjet." },
+      { icon: "Rocket", title: "Faqe uebi (landing)", description: "Faqe të fokusuara për konvertim, për fushata, lançime dhe evente.", details: "Një faqe e vetme e fokusuar, me mesazh të qartë dhe thirrje të fortë për veprim. Ideale për promocione, evente, lançime aplikacionesh ose shërbime të reja, e ndërtuar të ngarkohet menjëherë dhe t'i kthejë vizitorët në klientë potencialë." },
+      { icon: "RefreshCw", title: "Ridizajnim", description: "Jepini faqes suaj të vjetër një pamje moderne, përdorim më të mirë dhe shpejtësi më të lartë.", details: "Shqyrtojmë faqen aktuale, ruajmë atë që funksionon dhe rindërtojmë pjesën tjetër: dizajn të ri, navigim më të qartë, ngarkim më të shpejtë dhe dukshmëri më të mirë në kërkim, pa humbur përmbajtjen ekzistuese." },
+      { icon: "Wrench", title: "Mirëmbajtje", description: "Përditësime, kopje rezervë, siguri dhe ndryshime të vogla që faqja juaj të qëndrojë në formë.", details: "Kujdes i vazhdueshëm për faqen tuaj: përditësime softuerike, kopje rezervë të rregullta, kontrolle sigurie dhe ndryshime të vogla përmbajtjeje. Nëse diçka prishet, e rregullojmë shpejt që ju të përqendroheni te biznesi." },
+      { icon: "Gauge", title: "Shpejtësi dhe SEO", description: "Optimizim i performancës dhe strukturë miqësore për kërkim që t'ju gjejnë më lehtë.", details: "Kontrollojmë shpejtësinë dhe dukshmërinë në kërkim, kompresojmë imazhet, pastrojmë kodin, rregullojmë problemet teknike të SEO-s dhe konfigurojmë analitikën që të shihni çfarë ju sjell klientë." },
+      { icon: "PenTool", title: "Dizajn logoje", description: "Një logo e paharrueshme që i jep biznesit tuaj identitet të qartë e profesional.", details: "Merrni disa koncepte logoje bazuar te biznesi dhe stili juaj, me korrigjime derisa të jeni të kënaqur. Dorëzojmë skedarët përfundimtarë për web dhe shtyp, me ngjyra dhe bardhë e zi." },
+      { icon: "Palette", title: "Dizajn grafik", description: "Letra biznesi, postime për rrjete sociale, fletushka dhe gjithçka që i duhet markës suaj.", details: "Letra biznesi, fletushka, postime për rrjete sociale, banera dhe udhëzues marke. Mbajmë ngjyrat, shkronjat dhe stilin konsistent që biznesi juaj të duket profesional kudo." },
     ],
   },
 

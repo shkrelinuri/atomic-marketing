@@ -30,14 +30,16 @@ export const it = {
   services: {
     eyebrow: "Servizi",
     title: "Tutto ciò che serve per andare online.",
-    description: "Da una semplice pagina a un negozio online completo, ci occupiamo di design, sviluppo e lancio.",
+    description: "Da una semplice pagina a un negozio online completo, ci occupiamo di design, sviluppo e lancio. Clicca su un servizio per saperne di più.",
     items: [
-      { icon: "Globe", title: "Siti web aziendali", description: "Siti professionali e veloci che spiegano cosa fai e trasformano i visitatori in clienti." },
-      { icon: "ShoppingCart", title: "Negozi online", description: "E-commerce sicuro, con gestione semplice di prodotti, pagamenti e spedizioni." },
-      { icon: "Rocket", title: "Landing page", description: "Pagine singole pensate per convertire, per campagne, lanci ed eventi." },
-      { icon: "RefreshCw", title: "Restyling", description: "Dai al tuo vecchio sito un look moderno, più usabilità e tempi di caricamento ridotti." },
-      { icon: "Wrench", title: "Manutenzione", description: "Aggiornamenti, backup, sicurezza e piccole modifiche per mantenere il sito in salute." },
-      { icon: "Gauge", title: "Velocità e SEO", description: "Ottimizzazione delle prestazioni e struttura adatta ai motori di ricerca, per farti trovare." },
+      { icon: "Globe", title: "Siti web aziendali", description: "Siti professionali e veloci che spiegano cosa fai e trasformano i visitatori in clienti.", details: "Pianifichiamo la struttura, scriviamo con te i testi delle pagine e realizziamo un sito veloce e ottimizzato per mobile che riflette il tuo marchio. Include modulo di contatto, link ai social, SEO di base e un modo semplice per aggiornare i contenuti da solo." },
+      { icon: "ShoppingCart", title: "Negozi online", description: "E-commerce sicuro, con gestione semplice di prodotti, pagamenti e spedizioni.", details: "Dalle schede prodotto a un carrello fluido, dai pagamenti online sicuri alle regole di spedizione, configuriamo tutto ciò che serve per vendere. Ti mostriamo anche come aggiungere prodotti, gestire gli ordini e seguire le vendite." },
+      { icon: "Rocket", title: "Landing page", description: "Pagine singole pensate per convertire, per campagne, lanci ed eventi.", details: "Una singola pagina mirata, con un messaggio chiaro e una forte call to action. Ideale per promozioni, eventi, lanci di app o nuovi servizi, progettata per caricarsi subito e trasformare i visitatori in contatti." },
+      { icon: "RefreshCw", title: "Restyling", description: "Dai al tuo vecchio sito un look moderno, più usabilità e tempi di caricamento ridotti.", details: "Analizziamo il sito attuale, manteniamo ciò che funziona e ricostruiamo il resto: design nuovo, navigazione più chiara, caricamento più rapido e maggiore visibilità sui motori di ricerca, senza perdere i contenuti esistenti." },
+      { icon: "Wrench", title: "Manutenzione", description: "Aggiornamenti, backup, sicurezza e piccole modifiche per mantenere il sito in salute.", details: "Cura continua del tuo sito: aggiornamenti software, backup regolari, controlli di sicurezza e piccole modifiche ai contenuti. Se qualcosa si rompe, lo sistemiamo subito, così puoi concentrarti sulla tua attività." },
+      { icon: "Gauge", title: "Velocità e SEO", description: "Ottimizzazione delle prestazioni e struttura adatta ai motori di ricerca, per farti trovare.", details: "Verifichiamo velocità e visibilità nei motori di ricerca, comprimiamo le immagini, ripuliamo il codice, risolviamo i problemi tecnici di SEO e configuriamo l'analisi dei dati per capire cosa porta clienti." },
+      { icon: "PenTool", title: "Design del logo", description: "Un logo memorabile che dà alla tua attività un'identità chiara e professionale.", details: "Ricevi diverse proposte di logo basate sulla tua attività e sul tuo stile, con modifiche fino alla tua soddisfazione. Consegniamo i file finali per web e stampa, a colori e in bianco e nero." },
+      { icon: "Palette", title: "Grafica", description: "Biglietti da visita, post per i social, volantini e tutto ciò che serve al tuo marchio.", details: "Biglietti da visita, volantini, post per i social, banner e linee guida del marchio. Manteniamo colori, caratteri e stile coerenti, così la tua attività appare professionale ovunque." },
     ],
   },
 
