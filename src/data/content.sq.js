@@ -118,8 +118,7 @@ export const sq = {
   },
 
   ui: {
-    switchLang: "English",
-    switchLangShort: "EN",
+    langLabel: "Gjuha",
     nav: { openMenu: "Hap menunë", closeMenu: "Mbyll menunë", lightMode: "Kalo në modalitetin e çelët", darkMode: "Kalo në modalitetin e errët" },
     pricing: { popular: "Më i popullarizuari", cta: "Fillo tani" },
     form: {

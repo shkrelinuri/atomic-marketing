@@ -175,8 +175,7 @@ export const contact = {
 
 // Small UI strings used inside components
 export const ui = {
-  switchLang: "Shqip",
-  switchLangShort: "SQ",
+  langLabel: "Language",
   nav: { openMenu: "Open menu", closeMenu: "Close menu", lightMode: "Switch to light mode", darkMode: "Switch to dark mode" },
   pricing: { popular: "Most popular", cta: "Get started" },
   form: {

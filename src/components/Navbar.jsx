@@ -1,12 +1,14 @@
-﻿import { useEffect, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Atom, Languages, Menu, Moon, Sun, X } from "lucide-react";
-import { useContent } from "../i18n/LanguageContext";
+import { Atom, Check, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { LANGUAGES, useContent } from "../i18n/LanguageContext";
 
 // Sticky navbar: smooth-scroll links, animated underline, theme toggle, mobile menu.
 export default function Navbar({ dark, onToggleTheme }) {
-  const { navCta, navLinks, site, ui, toggleLang } = useContent();
+  const { navCta, navLinks, site, ui, lang, setLang } = useContent();
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
 
   // On mobile, close the menu first, then scroll; the native jump gets lost while the menu collapses.
@@ -26,6 +28,19 @@ export default function Navbar({ dark, onToggleTheme }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the language menu on outside click or Escape
+  useEffect(() => {
+    if (!langOpen) return;
+    const onClick = (e) => !langRef.current?.contains(e.target) && setLangOpen(false);
+    const onKey = (e) => e.key === "Escape" && setLangOpen(false);
+    document.addEventListener("mousedown", onClick);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [langOpen]);
 
   // Close the mobile menu with Escape
   useEffect(() => {
@@ -63,15 +78,42 @@ export default function Navbar({ dark, onToggleTheme }) {
         </ul>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={toggleLang}
-            aria-label={ui.switchLang}
-            className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-accent/10 hover:text-accent"
-          >
-            <Languages size={16} aria-hidden="true" />
-            {ui.switchLangShort}
-          </button>
+          <div ref={langRef} className="relative">
+            <button
+              type="button"
+              onClick={() => setLangOpen((o) => !o)}
+              aria-label={ui.langLabel}
+              aria-haspopup="listbox"
+              aria-expanded={langOpen}
+              className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold uppercase transition-colors hover:bg-accent/10 hover:text-accent"
+            >
+              <Languages size={16} aria-hidden="true" />
+              {lang}
+            </button>
+            {langOpen && (
+              <ul
+                role="listbox"
+                aria-label={ui.langLabel}
+                className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-xl border border-ink/10 bg-paper py-1 shadow-xl dark:border-paper/10 dark:bg-ink"
+              >
+                {LANGUAGES.map((l) => (
+                  <li key={l.code} role="option" aria-selected={l.code === lang}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setLang(l.code);
+                        setLangOpen(false);
+                      }}
+                      className="flex w-full items-center justify-between px-4 py-2 text-left text-sm font-medium transition-colors hover:bg-accent/10 hover:text-accent"
+                    >
+                      {l.label}
+                      {l.code === lang && <Check size={14} className="text-accent" aria-hidden="true" />}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
           <button
             type="button"
