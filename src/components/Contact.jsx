@@ -88,7 +88,7 @@ export default function Contact() {
                   <li key={s.label}>
                     <a
                       href={s.href}
-                      target="_blank"
+                      target={s.icon === "Instagram" ? "_self" : "_blank"}
                       rel="noopener noreferrer"
                       aria-label={s.label}
                       className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 transition-colors hover:border-accent hover:bg-accent hover:text-white dark:border-paper/20"
