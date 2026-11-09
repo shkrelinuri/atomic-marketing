@@ -90,6 +90,14 @@ export default function Hero() {
             </div>
           ))}
         </motion.dl>
+
+        <motion.div variants={item} className="mt-14 flex justify-center lg:justify-end">
+          <img
+            src={`${import.meta.env.BASE_URL}logoatomic-transparent.png`}
+            alt="Atomic Marketing logo"
+            className="h-72 w-72 object-contain drop-shadow-[0_0_30px_rgba(168,85,247,0.85)] sm:h-80 sm:w-80"
+          />
+        </motion.div>
       </motion.div>
     </section>
   );

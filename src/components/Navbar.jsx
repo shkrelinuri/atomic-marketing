@@ -1,6 +1,6 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Atom, Check, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { Check, Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { LANGUAGES, useContent } from "../i18n/LanguageContext";
 
 // Sticky navbar: smooth-scroll links, animated underline, theme toggle, mobile menu.
@@ -59,9 +59,13 @@ export default function Navbar({ dark, onToggleTheme }) {
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2 text-lg font-extrabold tracking-tight">
-          <Atom size={22} className="text-accent" aria-hidden="true" />
-          {site.brand}
+        <a href="#top" className="flex items-center gap-3 text-lg font-extrabold tracking-tight">
+          <img
+            src={`${import.meta.env.BASE_URL}logoatomic-transparent.png`}
+            alt="Atomic Marketing logo"
+            className="h-10 w-10 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.7)]"
+          />
+          <span className="hidden md:inline">{site.brand}</span>
         </a>
 
         {/* Desktop links */}

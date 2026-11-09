@@ -7,7 +7,7 @@ export default {
       colors: {
         paper: "#FAFAFA", // light background
         ink: "#111111", // near-black text / dark background
-        accent: "#2563EB", // the ONE accent color
+        accent: "#A855F7", // neon purple to match the new logo
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
