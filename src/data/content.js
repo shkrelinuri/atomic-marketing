@@ -9,7 +9,7 @@ export const site = {
   formEndpoint: "https://formspree.io/f/mqpelgla",
   socials: [
     { label: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/355676489460" },
-    { label: "Instagram", icon: "Instagram", href: "https://www.instagram.com/nextstreamclips/" },
+    { label: "Instagram", icon: "Instagram", href: "https://www.instagram.com/atomic.marketing_/" },
   ],
 };
 
