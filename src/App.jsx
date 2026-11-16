@@ -1,4 +1,5 @@
 import { MotionConfig, motion } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import useTheme from "./hooks/useTheme";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -32,6 +33,7 @@ export default function App() {
         </main>
         <Footer />
       </motion.div>
+      <Analytics />
     </MotionConfig>
   );
 }
